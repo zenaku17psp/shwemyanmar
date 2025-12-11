@@ -83,7 +83,7 @@ class Call:
             session_string=config.STRING1,
             **client_config
         ) if config.STRING1 else None
-        self.one = PyTgCalls(self.userbot1, overload_quiet_mode=True) if self.userbot1 else None
+        self.one = PyTgCalls(self.userbot1) if self.userbot1 else None  # overload_quiet_mode ကို ဖယ်ထုတ်လိုက်ပါ
 
         self.userbot2 = Client(
             name="maythusharmusic2",
@@ -92,7 +92,7 @@ class Call:
             session_string=config.STRING2,
             **client_config
         ) if config.STRING2 else None
-        self.two = PyTgCalls(self.userbot2, overload_quiet_mode=True) if self.userbot2 else None
+        self.two = PyTgCalls(self.userbot2) if self.userbot2 else None  # overload_quiet_mode ကို ဖယ်ထုတ်လိုက်ပါ
 
         self.userbot3 = Client(
             name="maythusharmusic3",
@@ -101,7 +101,7 @@ class Call:
             session_string=config.STRING3,
             **client_config
         ) if config.STRING3 else None
-        self.three = PyTgCalls(self.userbot3, overload_quiet_mode=True) if self.userbot3 else None
+        self.three = PyTgCalls(self.userbot3) if self.userbot3 else None  # overload_quiet_mode ကို ဖယ်ထုတ်လိုက်ပါ
 
         self.userbot4 = Client(
             name="maythusharmusic4",
@@ -110,7 +110,7 @@ class Call:
             session_string=config.STRING4,
             **client_config
         ) if config.STRING4 else None
-        self.four = PyTgCalls(self.userbot4, overload_quiet_mode=True) if self.userbot4 else None
+        self.four = PyTgCalls(self.userbot4) if self.userbot4 else None  # overload_quiet_mode ကို ဖယ်ထုတ်လိုက်ပါ
 
         self.userbot5 = Client(
             name="maythusharmusic5",
@@ -119,7 +119,7 @@ class Call:
             session_string=config.STRING5,
             **client_config
         ) if config.STRING5 else None
-        self.five = PyTgCalls(self.userbot5, overload_quiet_mode=True) if self.userbot5 else None
+        self.five = PyTgCalls(self.userbot5) if self.userbot5 else None  # overload_quiet_mode ကို ဖယ်ထုတ်လိုက်ပါ
 
         self.active_calls: set[int] = set()
         
