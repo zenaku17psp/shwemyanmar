@@ -47,12 +47,10 @@ def dynamic_media_stream(path: str, video: bool = False, ffmpeg_params: str = No
     return MediaStream(
         audio_path=path,
         media_path=path,
-        # အသံအရည်အသွေးကို မြှင့်တင်ပေးခြင်း
-        audio_parameters=audio_params,
+        audio_parameters=AudioQuality.STUDIO if video else AudioQuality.STUDIO,
         video_parameters=VideoQuality.HD_720p if video else VideoQuality.SD_360p,
         video_flags=(MediaStream.Flags.AUTO_DETECT if video else MediaStream.Flags.IGNORE),
-        # အသံထွက်ကြည့်လင် ပြတ်သားစေရန် ffmpeg parameters
-        ffmpeg_parameters=ffmpeg_params or "-af 'volume=1.5, equalizer=f=1000:width_type=h:width=100:g=5, dynaudnorm'",
+        ffmpeg_parameters=ffmpeg_params,
     )
 
 async def _clear_(chat_id: int) -> None:
